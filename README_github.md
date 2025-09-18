@@ -99,6 +99,4 @@ docker run -d \
 
 ## 🙏 致谢
 
-- [python-pptx](https://github.com/scanny/python-pptx) - 用于PPTX文件处理
-- [Flask](https://github.com/pallets/flask) - Web框架
-- [腾讯云COS SDK](https://github.com/tencentyun/cos-python-sdk-v5) - 云存储SDK
+- [ztonxue](https://github.com/zhoujiaxinii) - 项目开发者
