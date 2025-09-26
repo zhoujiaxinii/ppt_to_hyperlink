@@ -378,7 +378,7 @@ docker-compose restart
 
 ## 👥 作者
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter) - your.email@example.com
+ztonxue - [@your_twitter](https://twitter.com/your_twitter) - zjx0664@Gmail.com
 
 项目链接: [https://github.com/yourusername/ppt_to_hyperlink](https://github.com/yourusername/ppt_to_hyperlink)
 
