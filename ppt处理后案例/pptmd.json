@@ -1,0 +1,950 @@
+{
+    "data": {
+        "result": {
+            "level": 1,
+            "name": "汉语拼音声调：一声初体验",
+            "url": null,
+            "type": null,
+            "children": [
+                {
+                    "level": 2,
+                    "name": "课程导入",
+                    "url": null,
+                    "type": null,
+                    "children": [
+                        {
+                            "level": 3,
+                            "name": "欢迎来到汉语世界",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "课堂问候",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "同学们好！见到你们真开心！",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "天气与午餐",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "今天天气怎么样？你吃午饭了吗？",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "开启学习之旅",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "让我们一起开始今天的中文学习之旅吧！",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "复习旧知",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "上节课回顾",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "上节课我们学习了什么？还记得吗？",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "作业检查",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "老师布置的作业大家都完成了吗？",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "答疑解惑",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "有没有遇到什么困难？现在我们一起来检查！",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "认识一声",
+                    "url": null,
+                    "type": null,
+                    "children": [
+                        {
+                            "level": 3,
+                            "name": "什么是声调？",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "声调的重要性",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "你知道吗？汉语拼音有四个声调，就像唱歌一样，有高有低。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "聚焦一声",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "今天，我们先来认识第一个声调——一声！",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "一声的特点",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "一声是平平的调子，像一条直线，又高又平。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "视频教学",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "观看教学视频",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "请同学们观看视频，了解一声的发音方法和特点。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        },
+                                        {
+                                            "level": 0,
+                                            "name": "",
+                                            "url": "https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/02175802777354412cea654c967d03eb709107f3e8697a557c906_0.jpeg",
+                                            "type": "image",
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "视频链接",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "一声教学视频",
+                                            "url": "https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/bd781d03754042c4acb27d148d5beed8.mp4",
+                                            "type": "link",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "一声学习",
+                    "url": null,
+                    "type": null,
+                    "children": [
+                        {
+                            "level": 3,
+                            "name": "发音要领",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "声带与音高",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "一声发音时，声带拉紧，音高保持不变，又高又平。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "手势辅助记忆",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "我们可以用手势来帮助记忆：把手平平地伸出去，像飞机平稳飞行。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "例子",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "妈 (mā) — 妈妈 (mom)；飞机 (fēijī) — 飞机 (airplane)",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "听音辨音",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "听音跟读",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "现在听这些词的一声发音，然后跟读。注意声音要平平、高高。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "示例词语",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "1) mā (妈) — 妈妈 (mom)；2) bā (八) — 数字八 (eight)；3) dā (搭) — 乘坐/搭乘 (to take a ride)",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "音频链接",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "示例词语音频",
+                                            "url": "https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/speech_7426725529589694491_55915670-b46c-4976-856d-68f1c9f1a4be.mp3",
+                                            "type": "link",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "口语与听写练习",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "口语任务",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "请说出汉语中一声（高平调）的音节示例。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "听写任务",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "请写出听到的一声音节。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "听写音频链接",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "听写音频",
+                                            "url": "https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/speech_7426725529589694491_158daaa7-1533-4efc-a1f8-1e5d66a883b5.mp3",
+                                            "type": "link",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "趣味练习",
+                    "url": null,
+                    "type": null,
+                    "children": [
+                        {
+                            "level": 3,
+                            "name": "声调小侦探",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "游戏说明",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "哪个词语是一声？选择正确的图片，点击它！",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "游戏选项",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "A. 妈 (mā)；B. 马 (mǎ)；C. 骂 (mà)",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "标记任务",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "请标记出下列单词中带有一声的字: 妈（mā）、麻（má）、马（mǎ）、骂（mà）",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "游戏链接：声调小侦探",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "游戏链接地址",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "声调小侦探",
+                                            "url": "https://courseware-1302261367.file.myqcloud.com/package/re_qi_qiu_you_xi_8/index.html?data_url=https://courseware-1302261367.file.myqcloud.com/json/%E6%95%99%E7%A0%94/doom_the_rescue_20250811095444.json",
+                                            "type": "link",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "声调配对游戏",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "游戏说明",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "请把发一声的词语和它的图片配对。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "游戏内容",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "词语：1. 妈 (mā) 2. 爸 (bà) 3. 飞机 (fēijī)；图片：A. 妈妈 B. 爸爸 C. 飞机",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "游戏链接：声调配对",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "游戏链接地址",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "声调配对",
+                                            "url": "https://courseware-1302261367.file.myqcloud.com/package/bang_qiu_you_xi_18/index.html?data_url=https://courseware-1302261367.file.myqcloud.com/json/%E6%95%99%E7%A0%94/bang_qiu_dui_dui_peng_20250809143858.json",
+                                            "type": "link",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "一声的应用",
+                    "url": null,
+                    "type": null,
+                    "children": [
+                        {
+                            "level": 3,
+                            "name": "更多一声词语",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "例子",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "花 (huā) — 花朵 (flower)；山 (shān) — 山 (mountain)；天 (tiān) — 天空 (sky)",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "找出声调",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "听音判断",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "听老师读词语，判断哪个包含一声。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "示例词语",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "1) māma (妈妈)；2) bàba (爸爸)；3) lǎoshī (老师)",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "音频链接",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "听写任务",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "请写出听到的一声音节。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        },
+                                        {
+                                            "level": 0,
+                                            "name": "示例词语音频",
+                                            "url": "https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/speech_7426725529589694491_158daaa7-1533-4efc-a1f8-1e5d66a883b5.mp3",
+                                            "type": "link",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "声调挑战",
+                    "url": null,
+                    "type": null,
+                    "children": [
+                        {
+                            "level": 3,
+                            "name": "听音练习",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "听录音辨别",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "听录音，判断你听到的是一声的词语吗？",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "示例",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "录音：huā (花)；选项：是 / 不是",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "音频链接：声调挑战",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "音频",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "示例词语音频",
+                                            "url": "https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/speech_7426725529589694491_55915670-b46c-4976-856d-68f1c9f1a4be.mp3",
+                                            "type": "link",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "口语与听写练习",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "口语任务",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "请说出汉语中一声（高平调）的音节示例。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "声调连线",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "连线任务",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "将发一声的拼音和对应的汉字连起来。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "连线内容",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "拼音：1. tiān 2. shān 3. huā；汉字：A. 花 B. 山 C. 天",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "音频链接：听写",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "听写",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "请写出听到的一声音节。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        },
+                                        {
+                                            "level": 0,
+                                            "name": "示例词语音频",
+                                            "url": "https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/speech_7426725529589694491_158daaa7-1533-4efc-a1f8-1e5d66a883b5.mp3",
+                                            "type": "link",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "name": "课程总结与作业",
+                    "url": null,
+                    "type": null,
+                    "children": [
+                        {
+                            "level": 3,
+                            "name": "课程总结",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "知识回顾",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "今天我们学习了汉语拼音的一声。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "一声的特点",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "一声高平，像飞机在空中平稳飞行。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "学习建议",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "多听多练，声调会越来越标准。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "布置作业",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "朗读练习",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "练习朗读今天学过的一声词语5遍。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "课后拓展",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "在生活中找找更多一声词语，并尝试读出来。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 4,
+                                    "name": "预习",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "预习二声的内容，为下节课做准备。",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "level": 3,
+                            "name": "课堂结束",
+                            "url": null,
+                            "type": null,
+                            "children": [
+                                {
+                                    "level": 4,
+                                    "name": "感谢",
+                                    "url": null,
+                                    "type": null,
+                                    "children": [
+                                        {
+                                            "level": 0,
+                                            "name": "同学们今天表现很棒！下节课再见！",
+                                            "url": null,
+                                            "type": null,
+                                            "children": []
+                                        },
+                                        {
+                                            "level": 0,
+                                            "name": "",
+                                            "url": "https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/0217580277743246282a478bab03bc7688c16d21409762c6b0d9e_0.jpeg",
+                                            "type": "image",
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "text": "# 汉语拼音声调：一声初体验\n\n## 1. 课程导入\n### 1.1 欢迎来到汉语世界\n#### 1.1.1 课堂问候\n同学们好！见到你们真开心！\n\n#### 1.1.2 天气与午餐\n今天天气怎么样？你吃午饭了吗？\n\n#### 1.1.3 开启学习之旅\n让我们一起开始今天的中文学习之旅吧！\n\n### 1.2 复习旧知\n#### 1.2.1 上节课回顾\n上节课我们学习了什么？还记得吗？\n\n#### 1.2.2 作业检查\n老师布置的作业大家都完成了吗？\n\n#### 1.2.3 答疑解惑\n有没有遇到什么困难？现在我们一起来检查！\n\n## 2. 认识一声\n### 2.1 什么是声调？\n#### 2.1.1 声调的重要性\n你知道吗？汉语拼音有四个声调，就像唱歌一样，有高有低。\n\n#### 2.1.2 聚焦一声\n今天，我们先来认识第一个声调——一声！\n\n#### 2.1.3 一声的特点\n一声是平平的调子，像一条直线，又高又平。\n\n### 2.2 视频教学\n#### 2.2.1 观看教学视频\n请同学们观看视频，了解一声的发音方法和特点。\n![](https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/02175802777354412cea654c967d03eb709107f3e8697a557c906_0.jpeg)\n\n#### 2.2.2 视频链接\n[一声教学视频](https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/bd781d03754042c4acb27d148d5beed8.mp4)\n\n## 3. 一声学习\n### 3.1 发音要领\n#### 3.1.1 声带与音高\n一声发音时，声带拉紧，音高保持不变，又高又平。\n\n#### 3.1.2 手势辅助记忆\n我们可以用手势来帮助记忆：把手平平地伸出去，像飞机平稳飞行。\n\n#### 3.1.3 例子\n妈 (mā) — 妈妈 (mom)；飞机 (fēijī) — 飞机 (airplane)\n\n### 3.2 听音辨音\n#### 3.2.1 听音跟读\n现在听这些词的一声发音，然后跟读。注意声音要平平、高高。\n\n#### 3.2.2 示例词语\n1) mā (妈) — 妈妈 (mom)；2) bā (八) — 数字八 (eight)；3) dā (搭) — 乘坐/搭乘 (to take a ride)\n\n#### 3.2.3 音频链接\n[示例词语音频](https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/speech_7426725529589694491_55915670-b46c-4976-856d-68f1c9f1a4be.mp3)\n\n### 3.3 口语与听写练习\n#### 3.3.1 口语任务\n请说出汉语中一声（高平调）的音节示例。\n\n#### 3.3.2 听写任务\n请写出听到的一声音节。\n\n#### 3.3.3 听写音频链接\n[听写音频](https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/speech_7426725529589694491_158daaa7-1533-4efc-a1f8-1e5d66a883b5.mp3)\n\n## 4. 趣味练习\n### 4.1 声调小侦探\n#### 4.1.1 游戏说明\n哪个词语是一声？选择正确的图片，点击它！\n\n#### 4.1.2 游戏选项\nA. 妈 (mā)；B. 马 (mǎ)；C. 骂 (mà)\n\n#### 4.1.3 标记任务\n请标记出下列单词中带有一声的字: 妈（mā）、麻（má）、马（mǎ）、骂（mà）\n\n### 4.2 游戏链接：声调小侦探\n#### 4.2.1 游戏链接地址\n[声调小侦探](https://courseware-1302261367.file.myqcloud.com/package/re_qi_qiu_you_xi_8/index.html?data_url=https://courseware-1302261367.file.myqcloud.com/json/%E6%95%99%E7%A0%94/doom_the_rescue_20250811095444.json)\n\n### 4.3 声调配对游戏\n#### 4.3.1 游戏说明\n请把发一声的词语和它的图片配对。\n\n#### 4.3.2 游戏内容\n词语：1. 妈 (mā) 2. 爸 (bà) 3. 飞机 (fēijī)；图片：A. 妈妈 B. 爸爸 C. 飞机\n\n### 4.4 游戏链接：声调配对\n#### 4.4.1 游戏链接地址\n[声调配对](https://courseware-1302261367.file.myqcloud.com/package/bang_qiu_you_xi_18/index.html?data_url=https://courseware-1302261367.file.myqcloud.com/json/%E6%95%99%E7%A0%94/bang_qiu_dui_dui_peng_20250809143858.json)\n\n## 5. 一声的应用\n### 5.1 更多一声词语\n#### 5.1.1 例子\n花 (huā) — 花朵 (flower)；山 (shān) — 山 (mountain)；天 (tiān) — 天空 (sky)\n\n### 5.2 找出声调\n#### 5.2.1 听音判断\n听老师读词语，判断哪个包含一声。\n\n#### 5.2.2 示例词语\n1) māma (妈妈)；2) bàba (爸爸)；3) lǎoshī (老师)\n\n### 5.3 音频链接\n#### 5.3.1 听写任务\n请写出听到的一声音节。\n[示例词语音频](https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/speech_7426725529589694491_158daaa7-1533-4efc-a1f8-1e5d66a883b5.mp3)\n## 6. 声调挑战\n### 6.1 听音练习\n#### 6.1.1 听录音辨别\n听录音，判断你听到的是一声的词语吗？\n\n#### 6.1.2 示例\n录音：huā (花)；选项：是 / 不是\n\n### 6.2 音频链接：声调挑战\n#### 6.2.1 音频\n[示例词语音频](https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/speech_7426725529589694491_55915670-b46c-4976-856d-68f1c9f1a4be.mp3)\n\n### 6.3 口语与听写练习\n#### 6.3.1 口语任务\n请说出汉语中一声（高平调）的音节示例。\n\n### 6.4 声调连线\n#### 6.4.1 连线任务\n将发一声的拼音和对应的汉字连起来。\n\n#### 6.4.2 连线内容\n拼音：1. tiān 2. shān 3. huā；汉字：A. 花 B. 山 C. 天\n\n### 6.5 音频链接：听写\n#### 6.5.1 听写\n请写出听到的一声音节。\n[示例词语音频](https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/speech_7426725529589694491_158daaa7-1533-4efc-a1f8-1e5d66a883b5.mp3)\n\n## 7. 课程总结与作业\n### 7.1 课程总结\n#### 7.1.1 知识回顾\n今天我们学习了汉语拼音的一声。\n\n#### 7.1.2 一声的特点\n一声高平，像飞机在空中平稳飞行。\n\n#### 7.1.3 学习建议\n多听多练，声调会越来越标准。\n\n### 7.2 布置作业\n#### 7.2.1 朗读练习\n练习朗读今天学过的一声词语5遍。\n\n#### 7.2.2 课后拓展\n在生活中找找更多一声词语，并尝试读出来。\n\n#### 7.2.3 预习\n预习二声的内容，为下节课做准备。\n\n### 7.3 课堂结束\n#### 7.3.1 感谢\n 同学们今天表现很棒！下节课再见！\n![](https://aiclass-1302261367.cos.ap-nanjing.myqcloud.com/0217580277743246282a478bab03bc7688c16d21409762c6b0d9e_0.jpeg)\n"
+    },
+    "code": 0,
+    "message": "ok"
+}

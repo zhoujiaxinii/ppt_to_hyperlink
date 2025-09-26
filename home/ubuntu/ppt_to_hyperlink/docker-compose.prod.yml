@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  ppt-hyperlink-converter:
+    build: .
+    container_name: ppt_hyperlink_api
+    ports:
+      - "5000:5000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - FLASK_ENV=production
+    restart: unless-stopped
+    volumes:
+      - /tmp:/tmp  # Mount temp directory for processing
+      - ./logs:/app/logs  # 持久化日志
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # 可选：添加监控服务
+  # nginx:
+  #   image: nginx:alpine
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/conf.d/default.conf
+  #     - ./ssl:/etc/nginx/ssl  # SSL证书
+  #   depends_on:
+  #     - ppt-hyperlink-converter
+  #   restart: unless-stopped
+
+volumes:
+  ppt_processing_temp:
