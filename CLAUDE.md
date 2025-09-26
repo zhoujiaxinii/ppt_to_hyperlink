@@ -4,97 +4,101 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This project is a Flask-based RESTful API that automatically converts media and game links within PPTX files into clickable hyperlinks. It's designed for scenarios like education and training to automate the processing of presentation files with numerous media resources. The application is integrated with Tencent Cloud COS for cloud storage. The core logic is in `app.py`.
+This is a Flask-based RESTful API service that automatically converts media and game links within PPTX files into clickable hyperlinks. The application downloads PPTX files, extracts embedded media/game links using XML parsing, converts them to hyperlinks, and uploads processed files to Tencent Cloud COS for download.
 
-## Core Features
+## Architecture
 
-- **Media and Game Link Recognition**: Automatically identifies audio, video, and specific game links.
-- **Hyperlink Conversion**: Converts identified plain text links into clickable hyperlinks.
-- **Cloud Storage Integration**: Supports uploading processed files to Tencent Cloud COS.
-- **RESTful API**: Provides API endpoints for integration.
-- **Docker Support**: Includes a full setup for containerized deployment.
+### Core Application Structure
+- **Single-file Flask app** (`app.py`): Contains all API endpoints and business logic
+- **Timeout management**: Uses custom threading-based timeout decorators for Windows compatibility
+- **Stream processing**: Downloads and processes files in chunks to handle large files efficiently
+- **Retry mechanisms**: Built-in retry logic for file downloads and COS uploads
+- **Regex-based extraction**: Pre-compiled regex patterns for performance optimization
 
-## Technology Stack
+### Key Components
+- **Link extraction**: Parses PPTX XML content to find media and game URLs using zipfile extraction
+- **Hyperlink conversion**: Uses python-pptx library to modify presentation files
+- **Cloud storage**: Integrates with Tencent Cloud COS for file storage and retrieval
+- **Performance optimization**: 1-minute API timeout with optimized processing pipeline
 
-- **Python 3.8+**: Main programming language.
-- **Flask**: Web framework.
-- **python-pptx**: Library for manipulating PowerPoint files.
-- **qcloud-cos-python-sdk-v5**: Tencent Cloud COS SDK.
-- **Docker**: For containerization.
+## Common Commands
 
-## Development and Deployment
+### Development Setup
+```bash
+# Install dependencies
+pip install -r requirements.txt
 
-### Local Development
+# Set required environment variables
+export COS_SECRET_ID=your_secret_id
+export COS_SECRET_KEY=your_secret_key
+export COS_REGION=your_region
+export COS_BUCKET=your_bucket
 
-1.  **Install dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-2.  **Set environment variables for Tencent Cloud COS**:
-    ```bash
-    export COS_SECRET_ID=your_secret_id
-    export COS_SECRET_KEY=your_secret_key
-    export COS_REGION=your_region
-    export COS_BUCKET=your_bucket
-    ```
-3.  **Run the application**:
-    ```bash
-    python home/ubuntu/ppt_to_hyperlink/app.py
-    ```
+# Run the application
+python app.py
+```
 
-### Docker Deployment (Recommended)
+### Docker Development
+```bash
+# Build and run with Docker Compose (recommended)
+docker-compose up --build -d
 
-1.  **Build and start the services**:
-    ```bash
-    docker-compose up --build -d
-    ```
-2.  **View service status**:
-    ```bash
-    docker-compose ps
-    ```
-3.  **View logs**:
-    ```bash
-    docker-compose logs -f
-    ```
+# View service status
+docker-compose ps
+
+# View logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
+```
 
 ### Testing
-
-Run the local test script with a specific PPTX file:
-
 ```bash
-python home/ubuntu/ppt_to_hyperlink/test_local_file.py 'd:\code\ppt_to_hyperlink_project\ppt测试案例\汉语拼音声调初体验：一声 (15).pptx'
-```
+# Run local functionality test (bypasses API)
+python test_local.py
 
-## API Usage
-
-- **Base URL**: `http://localhost:5000`
-- **Endpoints**:
-    - `POST /process_pptx`: Processes a PPTX file from a given URL.
-    - `GET /health`: Health check.
-    - `GET /`: API documentation.
-
-### Example Request
-
-```bash
-curl -X POST \
-     -H "Content-Type: application/json" \
+# Test API endpoint with cURL
+curl -X POST -H "Content-Type: application/json" \
      -d '{"pptx_url": "https://example.com/test.pptx"}' \
      http://localhost:5000/process_pptx
+
+# Health check
+curl http://localhost:5000/health
 ```
 
-## Project Structure
+## Development Notes
 
-```
-ppt_to_hyperlink/
-├── app.py                 # Flask API main application
-├── requirements.txt       # Python dependencies
-├── Dockerfile             # Docker image build file
-├── docker-compose.yml     # Docker Compose configuration
-├── test_local_file.py     # Local test script
-└── README.md              # Project documentation
-```
+### Environment Configuration
+- **Required**: All COS_* environment variables must be set for cloud storage functionality
+- **Without COS config**: Application will start but /process_pptx endpoint will fail with config errors
+- **Timeout settings**: API_TIMEOUT (60s) and PROCESSING_TIMEOUT (45s) are optimized for 1-minute processing
 
-## Link Recognition Rules
+### File Processing Pipeline
+1. **Download** (with size limits and streaming)
+2. **Extract links** (ZIP extraction + XML parsing with regex)
+3. **Add hyperlinks** (python-pptx modification)
+4. **Upload to COS** (with retry mechanism)
 
-- **Media Links**: `.mp3`, `.wav`, `.ogg`, `.mp4`, `.avi`, `.mov`, `.wmv`, `.flv`, `.webm`.
-- **Game Links**: URLs matching `https://domain.com/path/index.html?data_url=https://domain.com/path/game.json`.
+### Link Detection Rules
+- **Media files**: .mp3, .mp4, .wav, .avi, .mov, .wmv, .flv, .ogg, .webm
+- **Game links**: `index.html?data_url=*.json` pattern
+- **Performance**: Uses pre-compiled regex patterns for efficient matching
+
+### Error Handling Strategy
+- **Timeout errors**: Custom TimeoutException with threading-based implementation
+- **Download errors**: Exponential backoff retry with size validation
+- **Processing errors**: Comprehensive logging with error classification
+- **API responses**: Structured error responses with error_type classification
+
+### Performance Considerations
+- **File size limit**: 50MB maximum for faster processing
+- **Chunk size**: 64KB chunks for optimal download speed
+- **Timeout decorators**: Applied to long-running operations (extraction: 20s, hyperlinks: 15s)
+- **Memory efficiency**: Uses temporary directories and stream processing
+
+### Code Patterns
+- **Timeout decorator pattern**: `@with_timeout(seconds)` for operation limits
+- **Retry pattern**: Consistent retry logic across download and upload operations
+- **Context managers**: Extensive use of `tempfile.TemporaryDirectory()` for cleanup
+- **Logging strategy**: Structured logging with performance metrics and error classification

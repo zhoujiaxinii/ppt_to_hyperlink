@@ -70,8 +70,8 @@ def main():
     print("PPT Hyperlink Converter - Local Test")
     print("=" * 50)
 
-    # Test file path
-    test_file = r"d:\code\ppt_hyperlink\ppt游戏链接.pptx"
+    # Test file path - using the actual test file in our project
+    test_file = "ppt测试案例/汉语拼音声调初体验：一声 (19).pptx"
 
     # Run the test
     success = test_pptx_processing(test_file)

@@ -152,8 +152,11 @@ def extract_links_from_pptx(pptx_path):
     media_extensions = 'mp3|mp4|wav|avi|mov|wmv|flv|ogg|webm'
     media_pattern = fr'https?://[\w\.-]+(?:/[\w\.-/]*)?\.(?:{media_extensions})'
 
-    # Game link pattern (optimized)
-    game_pattern = r'https?://[\w\.-]+(?:/[\w\.-/]*)?/index\.html\?data_url=https?://[\w\.-/%]+\.json'
+    # Game link pattern (optimized) - supports both formats:
+    # 1. index.html?data_url=*.json
+    # 2. index.html?data_url=*.json&studentId=*
+    # Simplified to handle complex URLs with encoding
+    game_pattern = r'https?://[^\s]+/index\.html\?data_url=https?://[^\s&]+\.json(?:&[^\s]*)?'
 
     # Pre-compile regex patterns for better performance
     media_regex = re.compile(media_pattern, re.IGNORECASE)
@@ -190,7 +193,47 @@ def extract_links_from_pptx(pptx_path):
         logger.error(f"Error extracting links from PPTX: {str(e)}")
         raise
 
-    return links
+    # Clean up links by removing XML tags and entities
+    cleaned_links = set()
+    for link in links:
+        # Remove XML tags and entities
+        cleaned_link = re.sub(r'<[^>]*>', '', link)  # Remove XML tags
+        cleaned_link = re.sub(r'&amp;', '&', cleaned_link)  # Replace &amp; with &
+        cleaned_link = cleaned_link.strip()
+        if cleaned_link.startswith('http'):
+            cleaned_links.add(cleaned_link)
+
+    return cleaned_links
+
+def get_friendly_link_text(link):
+    """
+    Convert a link URL to friendly display text
+
+    Args:
+        link (str): The original link URL
+
+    Returns:
+        str: Friendly display text like "点击音频", "点击视频", "点击游戏"
+    """
+    link_lower = link.lower()
+
+    # Check for game links first (more specific pattern)
+    # Support both formats: index.html?data_url=*.json and index.html?data_url=*.json&studentId=*
+    if 'index.html?data_url=' in link_lower and '.json' in link_lower:
+        return "点击游戏"
+
+    # Check for audio files
+    audio_extensions = ['.mp3', '.wav', '.ogg']
+    if any(ext in link_lower for ext in audio_extensions):
+        return "点击音频"
+
+    # Check for video files
+    video_extensions = ['.mp4', '.avi', '.mov', '.wmv', '.flv', '.webm']
+    if any(ext in link_lower for ext in video_extensions):
+        return "点击视频"
+
+    # Default fallback - shouldn't happen with current regex patterns
+    return "点击链接"
 
 @with_timeout(15)  # 15 seconds timeout for hyperlink addition
 def add_hyperlinks_to_pptx(pptx_path, links, output_path):
@@ -219,22 +262,49 @@ def add_hyperlinks_to_pptx(pptx_path, links, output_path):
                     for para_idx, paragraph in enumerate(shape.text_frame.paragraphs):
                         paragraph_text = paragraph.text
 
-                        # Optimized link matching - check if any link is present
+                        # Improved link matching - check if paragraph contains link-like content
                         paragraph_lower = paragraph_text.lower()
+                        matched_link = None
+
+                        # Try exact match first
                         for link in links:
                             if link.lower() in paragraph_lower:
-                                logger.info(f"Found link '{link}' in slide {slide_idx + 1}, shape {shape_idx + 1}, paragraph {para_idx + 1}")
+                                matched_link = link
+                                break
 
-                                # Clear existing runs
-                                paragraph.clear()
+                        # If no exact match, try partial matching for links
+                        if not matched_link:
+                            for link in links:
+                                # Extract domain and key parts for matching
+                                if 'index.html' in link and 'index.html' in paragraph_lower:
+                                    # For game links, match by domain and index.html
+                                    link_domain = link.split('/')[2] if '://' in link else ''
+                                    if link_domain and link_domain in paragraph_lower:
+                                        matched_link = link
+                                        break
+                                elif any(ext in link for ext in ['.mp4', '.mp3', '.wav']) and any(ext in paragraph_lower for ext in ['.mp4', '.mp3', '.wav']):
+                                    # For media links, match by domain and extension
+                                    link_domain = link.split('/')[2] if '://' in link else ''
+                                    if link_domain and link_domain in paragraph_lower:
+                                        matched_link = link
+                                        break
 
-                                # Add new run with hyperlink
-                                run = paragraph.add_run()
-                                run.text = link
-                                run.hyperlink.address = link
+                        if matched_link:
+                            logger.info(f"Found link '{matched_link}' in slide {slide_idx + 1}, shape {shape_idx + 1}, paragraph {para_idx + 1}")
 
-                                conversions_made += 1
-                                break  # Only process one link per paragraph
+                            # Get friendly display text for the link
+                            friendly_text = get_friendly_link_text(matched_link)
+
+                            # Clear existing runs
+                            paragraph.clear()
+
+                            # Add new run with hyperlink using friendly text
+                            run = paragraph.add_run()
+                            run.text = friendly_text
+                            run.hyperlink.address = matched_link
+
+                            logger.info(f"Converted '{matched_link}' to display text '{friendly_text}'")
+                            conversions_made += 1
 
         # Save the modified presentation
         prs.save(output_path)
