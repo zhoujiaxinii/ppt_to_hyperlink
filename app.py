@@ -148,9 +148,9 @@ def extract_links_from_pptx(pptx_path):
     links = set()
 
     # Improved link patterns with better performance
-    # Optimized patterns with pre-compilation
+    # Optimized patterns with pre-compilation - fixed to handle complex URLs
     media_extensions = 'mp3|mp4|wav|avi|mov|wmv|flv|ogg|webm'
-    media_pattern = fr'https?://[\w\.-]+(?:/[\w\.-/]*)?\.(?:{media_extensions})'
+    media_pattern = fr'https?://[^\s\)\(\（\）]+\.(?:{media_extensions})'
 
     # Game link pattern (optimized) - supports both formats:
     # 1. index.html?data_url=*.json
