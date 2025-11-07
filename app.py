@@ -327,50 +327,109 @@ def validate_cos_config():
         if not COS_BUCKET: missing.append('COS_BUCKET')
         raise RuntimeError(f"Missing COS configuration: {', '.join(missing)}")
 
+import sys  # 如果需要，可添加
+
 def upload_to_cos(file_path, cos_key, max_retries=MAX_RETRIES):
-    """
-    Upload file to Tencent Cloud COS
-
-    Args:
-        file_path (str): Local file path
-        cos_key (str): Key (path) in COS bucket
-
-    Returns:
-        str: COS download URL
-    """
     validate_cos_config()
+    file_size = os.path.getsize(file_path)
+    if file_size > 5 * 1024 * 1024:  # >5MB 使用分片上传
+        return multipart_upload_to_cos(file_path, cos_key, max_retries)
+    else:
+        # 保持原有简单上传代码
+        for attempt in range(max_retries):
+            try:
+                logger.info(f"Uploading to COS (attempt {attempt + 1}/{max_retries})")
 
+                if not os.path.exists(file_path):
+                    raise FileNotFoundError(f"File not found: {file_path}")
+
+                file_size = os.path.getsize(file_path)
+                if file_size > MAX_FILE_SIZE:
+                    raise ValueError(f"File too large for upload: {file_size} bytes")
+
+                with open(file_path, 'rb') as file_data:
+                    cos_client.put_object(
+                        Bucket=COS_BUCKET,
+                        Body=file_data,
+                        Key=cos_key,
+                        StorageClass='STANDARD'
+                    )
+
+                download_url = f"https://{COS_BUCKET}.cos.{COS_REGION}.myqcloud.com/{cos_key}"
+                logger.info(f"File uploaded to COS successfully: {download_url}")
+                return download_url
+
+            except Exception as e:
+                logger.warning(f"Upload attempt {attempt + 1} failed: {str(e)}")
+                if attempt == max_retries - 1:
+                    logger.error(f"All upload attempts failed. Last error: {str(e)}")
+                    raise
+                time.sleep(RETRY_DELAY * (attempt + 1))
+
+def multipart_upload_to_cos(file_path, cos_key, max_retries=MAX_RETRIES):
     for attempt in range(max_retries):
         try:
-            logger.info(f"Uploading to COS (attempt {attempt + 1}/{max_retries})")
+            logger.info(f"Multipart uploading to COS (attempt {attempt + 1}/{max_retries})")
+            # 初始化分片上传
+            response = cos_client.create_multipart_upload(
+                Bucket=COS_BUCKET,
+                Key=cos_key,
+                StorageClass='STANDARD'
+            )
+            upload_id = response['UploadId']
 
-            # Check file exists and size
-            if not os.path.exists(file_path):
-                raise FileNotFoundError(f"File not found: {file_path}")
+            # 分片大小：5MB（腾讯云最小分片大小为1MB，但推荐5MB+）
+            part_size = 5 * 1024 * 1024
+            parts = []
+            with open(file_path, 'rb') as f:
+                part_number = 1
+                while True:
+                    data = f.read(part_size)
+                    if not data:
+                        break
+                    for part_attempt in range(3):  # 每个分片重试3次
+                        try:
+                            upload_response = cos_client.upload_part(
+                                Bucket=COS_BUCKET,
+                                Key=cos_key,
+                                Body=data,
+                                PartNumber=part_number,
+                                UploadId=upload_id
+                            )
+                            parts.append({
+                                'ETag': upload_response['ETag'],
+                                'PartNumber': part_number
+                            })
+                            break
+                        except Exception as e:
+                            logger.warning(f"Part {part_number} attempt {part_attempt + 1} failed: {str(e)}")
+                            if part_attempt == 2:
+                                raise
+                            time.sleep(1)  # 分片重试延迟
+                    part_number += 1
 
-            file_size = os.path.getsize(file_path)
-            if file_size > MAX_FILE_SIZE:
-                raise ValueError(f"File too large for upload: {file_size} bytes")
-
-            # Upload file to COS
-            with open(file_path, 'rb') as file_data:
-                cos_client.put_object(
-                    Bucket=COS_BUCKET,
-                    Body=file_data,
-                    Key=cos_key,
-                    StorageClass='STANDARD'
-                )
-
-            # Construct download URL
+            # 完成上传
+            cos_client.complete_multipart_upload(
+                Bucket=COS_BUCKET,
+                Key=cos_key,
+                UploadId=upload_id,
+                MultipartUpload={'Parts': parts}
+            )
             download_url = f"https://{COS_BUCKET}.cos.{COS_REGION}.myqcloud.com/{cos_key}"
-            logger.info(f"File uploaded to COS successfully: {download_url}")
-
+            logger.info(f"Multipart file uploaded: {download_url}")
             return download_url
 
         except Exception as e:
-            logger.warning(f"Upload attempt {attempt + 1} failed: {str(e)}")
+            logger.warning(f"Multipart upload attempt {attempt + 1} failed: {str(e)}")
+            # 清理失败的上传
+            if 'upload_id' in locals():
+                try:
+                    cos_client.abort_multipart_upload(Bucket=COS_BUCKET, Key=cos_key, UploadId=upload_id)
+                    logger.info(f"Aborted multipart upload {upload_id}")
+                except:
+                    pass
             if attempt == max_retries - 1:
-                logger.error(f"All upload attempts failed. Last error: {str(e)}")
+                logger.error(f"All multipart upload attempts failed. Last error: {str(e)}")
                 raise
             time.sleep(RETRY_DELAY * (attempt + 1))
 
