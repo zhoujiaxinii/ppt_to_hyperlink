@@ -15,6 +15,8 @@ from functools import wraps
 import threading
 from urllib.parse import urlparse
 import platform
+import sys  # 如果需要，可添加
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -326,8 +328,6 @@ def validate_cos_config():
         if not COS_REGION: missing.append('COS_REGION')
         if not COS_BUCKET: missing.append('COS_BUCKET')
         raise RuntimeError(f"Missing COS configuration: {', '.join(missing)}")
-
-import sys  # 如果需要，可添加
 
 def upload_to_cos(file_path, cos_key, max_retries=MAX_RETRIES):
     validate_cos_config()
